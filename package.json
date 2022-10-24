@@ -1,0 +1,46 @@
+{
+  "name": "laravel-query-template-snippets",
+  "displayName": "Laravel Query Template Snippets",
+  "description": "laravel query template Snippets",
+  "publisher": "miftahshidiq",
+  "author": {
+    "name": "miftah shidiq",
+    "email": "contact@miftahshidiq.com"
+  },
+  "version": "0.0.2",
+  "engines": {
+    "vscode": "^1.0.0"
+  },
+  "categories": [
+    "Snippets",
+    "Other"
+  ],
+  "contributes": {
+    "snippets": [
+      {
+        "language": "php",
+        "path": "./snippets/php.code-snippets"
+      },
+      {
+        "language": "php",
+        "path": "./snippets/query.code-snippets"
+      },
+      {
+        "language": "php",
+        "path": "./snippets/collection.code-snippets"
+      },
+      {
+        "language": "php",
+        "path": "./snippets/eloquent.code-snippets"
+      },
+      {
+        "language": "blade",
+        "path": "./snippets/blade.code-snippets"
+      },
+      {
+        "language": "blade",
+        "path": "./snippets/collection.code-snippets"
+      }
+    ]
+  }
+}

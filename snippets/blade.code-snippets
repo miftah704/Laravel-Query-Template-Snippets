@@ -1,0 +1,149 @@
+{
+	"page-template": {
+		"prefix": "xcontent:template",
+		"body": [
+			"<x-app-layout title=\"$1\">",
+			"\t<x-materials.other-style>$2</x-materials.other-style>",
+			"\t<x-content>",
+			"\t\t{{-- <x-contents.header /> --}}",
+			"\t\t<x-contents.body>",
+			"\t\t\t<x-utilities.column variant=\"col-12 col-lg-8\">",
+				"\t\t\t\t${0:content}",
+			"\t\t\t</x-utilities.column>",
+			"\t\t</x-contents.body>",
+			"\t</x-content>",
+			"\t<x-materials.other-script>$3</x-materials.other-script>",
+			"</x-app-layout>",
+		],
+		"description": ""
+	},
+
+	"card-template": {
+		"prefix": "xcard:template",
+		"body": [
+			"<x-cards.cards ${1:variant=\"${2:overflow-hidden}\"}>",
+			"\t<x-cards.card-header>$3</x-cards.card-header>",
+			"\t<x-cards.card-body>$4</x-cards.card-body>",
+			"\t<x-cards.card-footer>$5</x-cards.card-footer>",
+			"</x-cards.cards>",
+		],
+		"description": "HTML format. This template for MySunplan only @miftah"
+	},
+
+	"row-template": {
+		"prefix": "xrow:template",
+		"body": [
+			"<x-utilities.row-column ${1:variant=\"$2\"}>",
+			"\t${0:$content}",
+			"</x-utilities.row-column>",
+		],
+		"description": "HTML format. This template for MySunplan only @miftah"
+	},
+
+	"col-template": {
+		"prefix": "xcol:template",
+		"body": [
+			"<x-utilities.column ${1:variant=\"$2\"}>",
+			"\t${0:$content}",
+			"</x-utilities.column>",
+		],
+		"description": "HTML format. This template for MySunplan only @miftah"
+	},
+
+	"modal-template": {
+		"prefix": "xmodal:template",
+		"body": [
+			"<x-modals.modal modalId=\"${1:...}\" modalTitle=\"${2:...}\" modalSize=\"${3:md}\" :center=\"${4:true}\">",
+			"\t${0:$content}",
+			"</x-modals.modal>",
+		],
+		"description": "HTML format. This template for MySunplan only @miftah"
+	},
+
+	// global blade
+	"class-name": {
+		"prefix": "xvariant:class",
+		"body": [
+			"variant=\"${1:col-lg-12}\"",
+		],
+		"description": "HTML format (variant class name blade @miftah)"
+	},
+
+	"slot-anonymous": {
+		"prefix": "xslot:anonymous",
+		"body": [
+			"<x-slot:$1>{{${2:$$variable}}}</x-slot:$1>$3",
+		],
+		"description": "HTML format. You may define the content of the named slot using the x-slot tag. Any content not within an explicit x-slot tag will be passed to the component in the $slot variable. | https://laravel.com/docs/9.x/blade#slots. (Anonymous slot blade @miftah)"
+	},
+
+	"slot-attr": {
+		"prefix": "xslot:attribute",
+		"body": [
+			"<x-slot:${1:heading} ${2:class=\"${3:}\"}>",
+			"\t${4:$heading}",
+			"</x-slot:${1:heading}>$0",
+		],
+		"description": "HTML format. Like Blade components, you may assign additional attributes to slots such as CSS class names. | https://laravel.com/docs/9.x/blade#slot-attributes (Attributes slot blade with attribute @miftah)"
+	},
+
+	"Asset CSS": {
+		"prefix": "xlink:css",
+		"body": [
+			"<link href=\"{{ asset('${1:style/${2:...}}') }}\" rel=\"stylesheet\">$0"
+		],
+		"description": "HTML Format (Asset CSS blade @miftah)"
+	},
+
+	"Asset JS": {
+		"prefix": "xlink:js",
+		"body": [
+			"<script src=\"{{ asset('${1:style/${2:...}}') }}\">$0"
+		],
+		"description": "HTML Format (Asset JS blade @miftah)."
+	},
+
+
+	"btn modal toggle": {
+		"prefix": "xbutton-toggle",
+		"body": [
+			"<button type=\"button\" class=\"btn ${2:btn-xxs border $3}\" data-toggle=\"modal\" data-target=\"#${1:modal-ID....}\">",
+			"\t${0:title or icons}",
+			"</button>"
+		],
+		"description": "HTML Blade format (button toggle for modal blade @miftah)"
+	},
+
+	// ========================================PHP
+	"single attribute": {
+		"prefix": "xroute:single",
+		"body": [
+			"{{ route('${1:route.name}',$${2:$variable})$0 }}"
+		],
+		"description": "PHP Blade Format (Route single-attribute blade @miftah)."
+	},
+
+	"multiple attribute": {
+		"prefix": "xroute:multiple",
+		"body": [
+			"{{ route('${1:route.name}',[$${2:$variable1}, $${3:${4:$variable2}, $${5:$variable3}}])$6 }}"
+		],
+		"description": "PHP Blade Format (Route multiple-attribute blade @miftah)."
+	},
+
+	"non-attr": {
+		"prefix": "xroute:non-attribute",
+		"body": [
+			"{{ route('${1:route.name}')$0 }}"
+		],
+		"description": "PHP Blade format (Route non-attribute blade @miftah)"
+	},
+
+	"loc-languages": {
+		"prefix": "xlang:local",
+		"body": [
+			"{{ __('$1') }}"
+		],
+		"description": "PHP Blade format (local languages @miftah)"
+	},
+}

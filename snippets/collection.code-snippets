@@ -1,0 +1,242 @@
+{
+
+	"all collection": {
+		"prefix": "-all()",
+		"body": [
+				"${1:->}all();$0",
+		],
+		"description": "https://laravel.com/docs/9.x/collections#method-all"
+	},
+
+	"average collection": {
+		"prefix": "-avg()",
+		"body": [
+				"${1:->}avg();$0",
+		],
+		"description": "https://laravel.com/docs/9.x/collections#method-avg"
+	},
+
+	"chunk collection": {
+		"prefix": "-chunk()",
+		"body": [
+				"${1:->}chunk(${2:value});$0",
+		],
+		"description": "https://laravel.com/docs/9.x/collections#method-chunk"
+	},
+
+	"collapse collection": {
+		"prefix": "-collapse()",
+		"body": [
+				"${1:->}collapse();$0",
+		],
+		"description": "https://laravel.com/docs/9.x/collections#method-collapse"
+	},
+
+	"collect collection": {
+		"prefix": "-collect()",
+		"body": [
+				"${1:->}collect();$0",
+		],
+		"description": "https://laravel.com/docs/9.x/collections#method-collect"
+	},
+
+	"combine collection": {
+		"prefix": "-combine()",
+		"body": [
+				"${1:->}combine([${2:'value1'}, ${3:value2}]);$0",
+		],
+		"description": "https://laravel.com/docs/9.x/collections#method-combine"
+	},
+
+	"concat collection": {
+		"prefix": "-concat()",
+		"body": [
+			"${1:->}concat([${2:'value'}]);$0",
+		],
+		"description": "https://laravel.com/docs/9.x/collections#method-concat"
+	},
+
+	"contains collection": {
+		"prefix": "-contains()",
+		"body": [
+			"${1:->}contains([${2:'value'}]);$0",
+		],
+		"description": ""
+	},
+
+	"count collection": {
+		"prefix": "-count()",
+		"body": [
+			"${1:->}count();$0",
+		],
+		"description": "https://laravel.com/docs/9.x/collections#method-count"
+	},
+
+	"countBy collection": {
+		"prefix": "-countBy()",
+		"body": [
+			"${1:->}countBy();$0",
+		],
+		"description": "https://laravel.com/docs/9.x/collections#method-countBy"
+	},
+
+	"crossJoin collection": {
+		"prefix": "-crossJoin()",
+		"body": [
+			"${1:->}crossJoin([${2:'value1'},${3:'value2'}]);$0",
+		],
+		"description": "https://laravel.com/docs/9.x/collections#method-crossjoin"
+	},
+
+	"diff collection": {
+		"prefix": "-diff()",
+		"body": [
+			"${1:->}diff([${2:'value1'},${3:'value2'}]);$0",
+		],
+		"description": "https://laravel.com/docs/9.x/collections#method-diff"
+	},
+
+	"diffAssoc collection": {
+		"prefix": "-diffAssoc()",
+		"body": [
+			"${1:->}diffAssoc([${2:'value'}]);$0",
+		],
+		"description": "https://laravel.com/docs/9.x/collections#method-diffassoc"
+	},
+
+	"diffKeys collection": {
+		"prefix": "-diffKeys()",
+		"body": [
+			"${1:->}diffKeys([${2:'value'}]);$0",
+		],
+		"description": "https://laravel.com/docs/9.x/collections#method-diffkeys"
+	},
+
+	"doesntContain collection": {
+		"prefix": "-doesntContain()",
+		"body": [
+			"${1:->}doesntContain(${2:'value'});$0",
+		],
+		"description": "https://laravel.com/docs/9.x/collections#method-doesntcontain"
+	},
+
+	"duplicates collection": {
+		"prefix": "-duplicates()",
+		"body": [
+			"${1:->}duplicates(${2:'value'});$0",
+		],
+		"description": "https://laravel.com/docs/9.x/collections#method-duplicates"
+	},
+
+	"every collection": {
+		"prefix": "-every()",
+		"body": [
+			"${1:->}every(${2:'value'});$0",
+		],
+		"description": "https://laravel.com/docs/9.x/collections#method-every"
+	},
+
+	"except collection": {
+		"prefix": "-except()",
+		"body": [
+			"${1:->}except([${2:'value1'}, ${3:'value2'}]);$0",
+		],
+		"description": "https://laravel.com/docs/9.x/collections#method-except"
+	},
+
+	"filter collection": {
+		"prefix": "-filter()",
+		"body": [
+			"${1:->}filter(${2:'value'});$0",
+		],
+		"description": "https://laravel.com/docs/9.x/collections#method-filter"
+	},
+
+	"first collection": {
+		"prefix": "-first()",
+		"body": [
+			"${1:->}first();$0",
+		],
+		"description": "https://laravel.com/docs/9.x/collections#method-first"
+	},
+
+	"firstOrFail collection": {
+		"prefix": "-firstOrFail()",
+		"body": [
+			"${1:->}firstOrFail();$0",
+		],
+		"description": "https://laravel.com/docs/9.x/collections#method-first-or-fail"
+	},
+
+	"firstWhere collection": {
+		"prefix": "-firstWhere()",
+		"body": [
+			"${1:->}firstWhere(${2:'column'}, ${3:'operator',} ${4:'value'});$0",
+		],
+		"description": "https://laravel.com/docs/9.x/collections#method-first-where"
+	},
+
+	"flatMap collection": {
+		"prefix": "-flatMap()",
+		"body": [
+			"${1:->}flatMap(${2:'value'});$0",
+		],
+		"description": "https://laravel.com/docs/9.x/collections#method-flatmap"
+	},
+
+	"flatten collection": {
+		"prefix": "-flatten()",
+		"body": [
+			"${1:->}flatten();$0",
+		],
+		"description": "https://laravel.com/docs/9.x/collections#method-flatten"
+	},
+
+	"flip collection": {
+		"prefix": "-flip()",
+		"body": [
+			"${1:->}flip();$0",
+		],
+		"description": "https://laravel.com/docs/9.x/collections#method-flip"
+	},
+
+	"forget collection": {
+		"prefix": "-forget()",
+		"body": [
+			"${1:->}forget(${2:'value'});$0",
+		],
+		"description": "https://laravel.com/docs/9.x/collections#method-forget"
+	},
+
+	"forPage collection": {
+		"prefix": "-forPage()",
+		"body": [
+			"${1:->}forPage(${2:'value'});$0",
+		],
+		"description": "https://laravel.com/docs/9.x/collections#method-forpage"
+	},
+
+	"get collection": {
+		"prefix": "-get()",
+		"body": [
+			"${1:->}get();$0",
+		],
+		"description": "https://laravel.com/docs/9.x/collections#method-get"
+	},
+
+	"groupBy collection": {
+		"prefix": "-groupBy()",
+		"body": [
+			"${1:->}groupBy(${2:'value'})$0",
+		],
+		"description": "https://laravel.com/docs/9.x/collections#method-groupby"
+	},
+
+	"single-where queries": {
+		"prefix": "-where:single",
+		"body": [
+				"${1:->}where('${2:column1}'${3:,'${2:column...}'})",
+		],
+		"description": "https://laravel.com/docs/9.x/queries#select-statements"
+	},
+}

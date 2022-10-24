@@ -1,0 +1,187 @@
+{
+	"single-with eloquent": {
+		"prefix": "-with:single",
+		"body": [
+				"->with${1:X}(${2:'${3:${4:relation}${5::${6:id}}}'})$0",
+		],
+		"description": "https://laravel.com/docs/9.x/eloquent-relationships#eager-loading"
+	},
+
+	"multiple-with eloquent": {
+		"prefix": "-with:multiple",
+		"body": [
+				"->with(['${2:${3:${4:relation1}${5::${6:id}}}}','${7:${8:${9:relation2}${10::${11:id}}}}'$12])$0",
+		],
+		"description": "https://laravel.com/docs/9.x/eloquent-relationships#eager-loading-multiple-relationships"
+	},
+
+	"withWhereHas eloquent": {
+		"prefix": "-with:whereHas",
+		"body": [
+			"->withWhereHas('${1:relation}'${2:, fn ($${3:query}) => $${3:query}->${4:...}})",
+		],
+		"description": "https://laravel.com/docs/9.x/eloquent-relationships#constraining-eager-loads-with-relationship-existences"
+	},
+
+	"withCount eloquent": {
+		"prefix": "-withCount",
+		"body": [
+				"->withCount('${1:relation}')$0",
+		],
+		"description": "https://laravel.com/docs/9.x/eloquent-relationships#counting-related-models"
+	},
+
+	"withCount func eloquent": {
+		"prefix": "-withCount:function",
+		"body": [
+				"->withCount(${1:['${3:relation} ${4:AS ${5:alias}}'${2:=> fn ($$q) => $$q->${6:...}}]})$0",
+		],
+		"description": "https://laravel.com/docs/9.x/eloquent-relationships#counting-related-models"
+	},
+
+	"withSum eloquent": {
+		"prefix": "-withSum",
+		"body": [
+				"->withSum('${1:relation}','${2:column}')$0",
+		],
+		"description": "https://laravel.com/docs/9.x/eloquent-relationships#other-aggregate-functions"
+	},
+
+	"withSum func eloquent": {
+		"prefix": "-withSum:function",
+		"body": [
+				"->withSum(['${1:${3:relation} ${4:AS ${5:alias}}}'=> fn ($${6:query}) => $${6:query}->${7:...}], '${8:column}')$0",
+		],
+		"description": "https://laravel.com/docs/9.x/eloquent-relationships#other-aggregate-functions"
+	},
+
+	"has eloquent": {
+		"prefix": "-has",
+		"body": [
+			"->has('${1:relation}')$0",
+		],
+		"description": "https://laravel.com/docs/9.x/eloquent-relationships#querying-relationship-existence"
+	},
+
+	"doesntHave eloquent": {
+		"prefix": "-doesntHave",
+		"body": [
+			"->doesntHave('${1:relation}')$0",
+		],
+		"description": "https://laravel.com/docs/9.x/eloquent-relationships#querying-relationship-absence"
+	},
+
+	"whereHas eloquent": {
+		"prefix": "-whereHas",
+		"body": [
+			"->whereHas('${1:relation}' => fn($${2:query}) => $${2:query}->${3:...})$0",
+		],
+		"description": "https://laravel.com/docs/9.x/eloquent-relationships#querying-relationship-existence"
+	},
+
+	"whereRelation eloquent": {
+		"prefix": "-whereRelation",
+		"body": [
+			"->whereRelation('${1:relation}', '${2:column}', ${3:'${4:operator}', ${6:'${7:value}'}})$0",
+		],
+		"description": "https://laravel.com/docs/9.x/eloquent-relationships#inline-relationship-existence-queries"
+	},
+
+	"whereDoesntHave eloquent": {
+		"prefix": "-whereDoesntHave",
+		"body": [
+				"->whereDoesntHave('${1:relation}'${2:, fn ($${3:query}) => $${3:query}->${4:...}})",
+		],
+		"description": "https://laravel.com/docs/9.x/eloquent-relationships#querying-relationship-absence"
+	},
+
+	"select eloquent": {
+		"prefix": "-select()",
+		"body": [
+				"${1:->}select('${2:column1}'${3:,'${2:column...}'})",
+		],
+		"description": "https://laravel.com/docs/9.x/queries#select-statements"
+	},
+
+	"insert getID": {
+		"prefix": "xinsertGetId:template",
+		"body": [
+				"${1:model::}insertGetId([",
+					"\t'$2'\t\t=> ${3:value},$4",
+				"]);$0",
+		],
+		"description": "https://laravel.com/docs/9.x/queries#auto-incrementing-ids"
+	},
+
+	"save eloquent": {
+		"prefix": "xsave:template",
+		"body": [
+				"${1:$${2:table}}->${3:${4:relation}()->}save(",
+					"${5:new ${6:Model}([${7:'${8:message}' => ${9:'${10:value}'}}])}",
+				");$0",
+		],
+		"description": "https://laravel.com/docs/9.x/eloquent-relationships#the-save-method"
+	},
+
+	"saveMany eloquent": {
+		"prefix": "xsaveMany:template",
+		"body": [
+				"${1:$${2:table}}->${3:${4:relation}()->}saveMany([",
+					"${5:new ${6:Model1}([${7:'${8:column1}' => ${9:'${10:value}'}}]),}",
+					"${11:new ${12:Model2}([${13:'${14:column1}' => ${15:'${16:value}'}}])}",
+				"]);$0",
+		],
+		"description": "https://laravel.com/docs/9.x/eloquent-relationships#the-save-method"
+	},
+
+	"create eloquent": {
+		"prefix": "xcreate:template",
+		"body": [
+				"${1:${2:model}::}create([",
+					"\t'$3'\t\t=> ${4:value},$5",
+				"]);$0",
+		],
+		"description": "https://laravel.com/docs/9.x/eloquent-relationships#the-create-method"
+	},
+
+	"createInRelation eloquent": {
+		"prefix": "xcreateInRelation:template",
+		"body": [
+				"${1:$${2:table}}->${3:${4:relation}()->}create(",
+					"\t'$5'\t\t=> ${6:value},$7",
+				"]);$0",
+		],
+		"description": "https://laravel.com/docs/9.x/eloquent-relationships#the-create-method"
+	},
+
+	"createMany eloquent": {
+		"prefix": "xcreateMany:template",
+		"body": [
+				"${1:$${2:table}}->${3:${4:relation}()->}createMany([",
+					"\t'$5'\t\t=> ${6:value},",
+					"\t'$7'\t\t=> ${8:value}$9",
+				"]);$0",
+		],
+		"description": "https://laravel.com/docs/9.x/eloquent-relationships#the-create-method"
+	},
+
+	"update eloquent": {
+		"prefix": "xupdate:template",
+		"body": [
+				"$${1:${2:model}}->update([",
+					"\t'$3'\t\t=> ${4:value},$5",
+				"]);$0",
+		],
+		"description": "https://laravel.com/docs/9.x/eloquent#updates"
+	},
+
+	"validation": {
+		"prefix": "xvalidation:template",
+		"body": [
+				"$$validated = $$request->validate([",
+					"\t'$1'\t\t=> '${2:value}',$3",
+				"]);$0",
+		],
+		"description": "https://laravel.com/docs/9.x/validation#quick-writing-the-validation-logic"
+	},
+}

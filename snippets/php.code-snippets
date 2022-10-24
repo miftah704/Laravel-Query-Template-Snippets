@@ -1,0 +1,121 @@
+{
+	"auth user": {
+		"prefix": "xauth:user",
+		"body": [
+			"auth()->user()${1:->id}"
+		],
+		"description": "auth with user function and id is optional @miftah)"
+	},
+
+	"array to object": {
+		"prefix": "xarrtobj:template",
+		"body": [
+			"(object) [",
+				"\t'$1'\t\t=> $2,$0",
+			"];"
+		],
+		"description": "array to object @miftah"
+	},
+
+	"array 1-data": {
+		"prefix": "xarray:1",
+		"body": [
+			"'$1'${2:\t\t}=> $3,$0",
+		],
+		"description": "1 array data format template @miftah"
+	},
+
+	"array 2-data": {
+		"prefix": "xarray:2",
+		"body": [
+			"'$1'${2:\t\t}=> $3,",
+			"'$4'${5:\t\t}=> $6,$0",
+		],
+		"description": "2 array data format template @miftah"
+	},
+
+	"array 3-data": {
+		"prefix": "xarray:3",
+		"body": [
+			"'$1'${2:\t\t}=> $3,",
+			"'$4'${5:\t\t}=> $6,",
+			"'$7'${8:\t\t}=> $9,$0",
+		],
+		"description": "3 array data format template @miftah"
+	},
+
+	"get data with var": {
+		"prefix": "xgets:var",
+		"body": [
+				"$${1:$variable} = ${2:'query or data'};",
+		],
+		"description": "get data with variable @miftah"
+	},
+
+	"public var": {
+		"prefix": "xpublic:var",
+		"body": [
+				"public $${1:$variable};",
+		],
+		"description": "initialization for public variable @miftah"
+	},
+
+	"redirect route": {
+		"prefix": "xredirect:route",
+		"body": [
+				"return redirect()->route('$1')${2:->with('${3:messages}',${4:${5:__('Flashdata.insert')}})};",
+		],
+		"description": "return redirect route with input template @miftah"
+	},
+
+	"redirect back": {
+		"prefix": "xredirect:back",
+		"body": [
+				"return ${1:redirect()->}back()${2:->with('${3:messages}',${4:${5:__('Flashdata.insert')}})};",
+		],
+		"description": "return redirect back with input template @miftah"
+	},
+
+
+	"return view": {
+		"prefix": "xview:return",
+		"body": [
+			"return view('pages.${1:...}', [",
+				"\t'$2'\t\t=> $3,$0",
+			"]);"
+		],
+		"description": "return view template @miftah"
+	},
+
+	"anonymous func": {
+		"prefix": "xfunc:anonymous",
+		"body": [
+				"=> fn ($${1:$query}) => $${1:$query}->${0:...}",
+		],
+		"description": "anonymous function @miftah"
+	},
+
+	"ternary operator": {
+		"prefix": "xif:ternary",
+		"body": [
+				"($${1:condition}) ? $${2:statment1} : ${3:$${4:statment2}}",
+		],
+		"description": "ternary operator for condition @miftah"
+	},
+
+	"encrypt data": {
+		"prefix": "xencrypt:template",
+		"body": [
+				"encryptVariable($${1:data})$0",
+		],
+		"description": "encryption data template @miftah"
+	},
+
+	"decrypt data": {
+		"prefix": "xdecrypt:template",
+		"body": [
+				"decryptVariable($${1:data})$0",
+		],
+		"description": "decryption data template @miftah"
+	},
+}
