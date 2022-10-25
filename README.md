@@ -78,10 +78,16 @@ xroute:multiple
     {{ route('route.name',[$variable1, $variable2, $variable3]) }}
 ```
 
-xslot:anonymous
+xlang:local
 ```
     {{ __('') }}
 ```
+
+xslot:anonymous
+```
+    <x-slot:>{{$variable}}</x-slot:>
+```
+
 xslot:attribute
 ```
     <x-slot:heading class="">

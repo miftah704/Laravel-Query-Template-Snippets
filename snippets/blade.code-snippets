@@ -72,7 +72,7 @@
 	"slot-anonymous": {
 		"prefix": "xslot:anonymous",
 		"body": [
-			"<x-slot:$1>{{${2:$$variable}}}</x-slot:$1>$3",
+			"<x-slot:$1>${2:{{${3:$$variable}}}}</x-slot:$1>$0",
 		],
 		"description": "HTML format. You may define the content of the named slot using the x-slot tag. Any content not within an explicit x-slot tag will be passed to the component in the $slot variable. | https://laravel.com/docs/9.x/blade#slots. (Anonymous slot blade @miftah)"
 	},

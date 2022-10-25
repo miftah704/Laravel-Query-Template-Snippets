@@ -5,15 +5,31 @@
   "publisher": "miftahshidiq",
   "author": {
     "name": "miftah shidiq",
-    "email": "contact@miftahshidiq.com"
+    "email": "contact@miftahshidiq.com",
+    "url": "https://github.com/miftah704"
   },
-  "version": "0.0.2",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/miftah704/Laravel-Query-Template-Snippets.git"
+  },
+  "keywords": [
+      "laravel",
+      "model",
+      "template",
+      "snippet",
+      "formatter",
+      "blade",
+      "query",
+      "slot"
+  ],
+  "version": "0.0.3",
   "engines": {
     "vscode": "^1.0.0"
   },
   "categories": [
+    "Programming Languages",
     "Snippets",
-    "Other"
+    "Formatters"
   ],
   "contributes": {
     "snippets": [

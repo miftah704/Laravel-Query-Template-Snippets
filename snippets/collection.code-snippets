@@ -232,11 +232,493 @@
 		"description": "https://laravel.com/docs/9.x/collections#method-groupby"
 	},
 
-	"single-where queries": {
-		"prefix": "-where:single",
+	// =======================================================baru sampe sini dari bawah ke atas //
+
+	"keyBy collection": {
+		"prefix": "-keyBy()",
 		"body": [
-				"${1:->}where('${2:column1}'${3:,'${2:column...}'})",
+			"${1:->}keyBy(${2:'value'})$0",
+		],
+		"description": "https://laravel.com/docs/9.x/collections#method-keyby"
+	},
+
+	"keys collection": {
+		"prefix": "-keys()",
+		"body": [
+			"${1:->}keys()$0",
+		],
+		"description": "https://laravel.com/docs/9.x/collections#method-keys"
+	},
+
+	"last collection": {
+		"prefix": "-last()",
+		"body": [
+			"${1:->}last()$0",
+		],
+		"description": "https://laravel.com/docs/9.x/collections#method-last"
+	},
+
+	"lazy collection": {
+		"prefix": "-lazy()",
+		"body": [
+			"${1:->}lazy()$0",
+		],
+		"description": "https://laravel.com/docs/9.x/collections#method-lazy"
+	},
+
+	"map collection": {
+		"prefix": "-map()",
+		"body": [
+			"${1:->}map(${2:...})$0",
+		],
+		"description": "https://laravel.com/docs/9.x/collections#method-map"
+	},
+
+	"max collection": {
+		"prefix": "-max()",
+		"body": [
+			"${1:->}max(${2:'value'})$0",
+		],
+		"description": "https://laravel.com/docs/9.x/collections#method-max"
+	},
+
+	"merge collection": {
+		"prefix": "-merge()",
+		"body": [
+			"${1:->}merge(${2:[${3:'${4:key1}'} => ${5:['${6:value1}']}, ${7:'${8:key2}'} => ${9:['${10:value2}']}]})$0",
+		],
+		"description": "https://laravel.com/docs/9.x/collections#method-merge"
+	},
+
+	"min collection": {
+		"prefix": "-min()",
+		"body": [
+			"${1:->}max(${2:'value'})$0",
+		],
+		"description": "https://laravel.com/docs/9.x/collections#method-min"
+	},
+
+	"only collection": {
+		"prefix": "-only()",
+		"body": [
+			"${1:->}only(${2:'column'})$0",
+		],
+		"description": "https://laravel.com/docs/9.x/collections#method-only"
+	},
+
+	"pluck collection": {
+		"prefix": "-pluck()",
+		"body": [
+			"${1:->}pluck(${2:'value'})$0",
+		],
+		"description": "https://laravel.com/docs/9.x/collections#method-pluck"
+	},
+	
+	"pop collection": {
+		"prefix": "-pop()",
+		"body": [
+			"${1:->}pop()$0",
+		],
+		"description": "https://laravel.com/docs/9.x/collections#method-pop"
+	},
+
+	"prepend collection": {
+		"prefix": "-prepend()",
+		"body": [
+			"${1:->}prepend(${2:'value'})$0",
+		],
+		"description": "https://laravel.com/docs/9.x/collections#method-prepend"
+	},
+
+	"pull collection": {
+		"prefix": "-pull()",
+		"body": [
+			"${1:->}pull(${2:'value'})$0",
+		],
+		"description": "https://laravel.com/docs/9.x/collections#method-pull"
+	},
+
+	"push collection": {
+		"prefix": "-push()",
+		"body": [
+			"${1:->}push(${2:'value'})$0",
+		],
+		"description": "https://laravel.com/docs/9.x/collections#method-push"
+	},
+
+	"put collection": {
+		"prefix": "-put()",
+		"body": [
+			"${1:->}put(${2:'column'}, ${3:'value'})$0",
+		],
+		"description": "https://laravel.com/docs/9.x/collections#method-put"
+	},
+
+	"replace collection": {
+		"prefix": "-replace()",
+		"body": [
+			"${1:->}union(${2:[${3:'${4:key1}'} => ${5:['${6:value1}']}, ${7:'${8:key2}'} => ${9:['${10:value2}']}]})$0",
+		],
+		"description": "https://laravel.com/docs/9.x/collections#method-replace"
+	},
+
+	"replaceRecursive collection": {
+		"prefix": "-replaceRecursive()",
+		"body": [
+			"${1:->}replaceRecursive(${2:'value1'},${2:'value2'})$0",
+		],
+		"description": "https://laravel.com/docs/9.x/collections#method-replacerecursive"
+	},
+
+	"reverse collection": {
+		"prefix": "-reverse()",
+		"body": [
+			"${1:->}reverse()$0",
+		],
+		"description": "https://laravel.com/docs/9.x/collections#method-reverse"
+	},
+
+	"search collection": {
+		"prefix": "-search()",
+		"body": [
+			"${1:->}search(${2:'value'})$0",
+		],
+		"description": "https://laravel.com/docs/9.x/collections#method-search"
+	},
+
+	"shift collection": {
+		"prefix": "-shift()",
+		"body": [
+			"${1:->}shift()$0",
+		],
+		"description": "https://laravel.com/docs/9.x/collections#method-shift"
+	},
+
+	"shuffle collection": {
+		"prefix": "-shuffle()",
+		"body": [
+			"${1:->}shuffle()$0",
+		],
+		"description": "https://laravel.com/docs/9.x/collections#method-shuffle"
+	},
+
+	"skip collection": {
+		"prefix": "-skip()",
+		"body": [
+			"${1:->}skip(${2:'value'})$0",
+		],
+		"description": "https://laravel.com/docs/9.x/collections#method-skip"
+	},
+
+	"skipUntil collection": {
+		"prefix": "-skipUntil()",
+		"body": [
+			"${1:->}skipUntil(${2:'value'})$0",
+		],
+		"description": "https://laravel.com/docs/9.x/collections#method-skipuntil"
+	},
+
+	"skipWhile collection": {
+		"prefix": "-skipWhile()",
+		"body": [
+			"${1:->}skipWhile(${2:'value'})$0",
+		],
+		"description": "https://laravel.com/docs/9.x/collections#method-skipwhile"
+	},
+
+	"slice collection": {
+		"prefix": "-slice()",
+		"body": [
+			"${1:->}slice(${2:'value'})$0",
+		],
+		"description": "https://laravel.com/docs/9.x/collections#method-slice"
+	},
+
+	"sliding collection": {
+		"prefix": "-sliding()",
+		"body": [
+			"${1:->}sliding(${2:'value'})$0",
+		],
+		"description": "https://laravel.com/docs/9.x/collections#method-sliding"
+	},
+
+	"sole collection": {
+		"prefix": "-sole()",
+		"body": [
+			"${1:->}sole(${2:'value'})$0",
+		],
+		"description": "https://laravel.com/docs/9.x/collections#method-sole"
+	},
+
+	"sort collection": {
+		"prefix": "-sort()",
+		"body": [
+			"${1:->}sort()$0",
+		],
+		"description": "https://laravel.com/docs/9.x/collections#method-sort"
+	},
+
+	"sortBy collection": {
+		"prefix": "-sortBy()",
+		"body": [
+			"${1:->}sortBy(${2:'value'})$0",
+		],
+		"description": "https://laravel.com/docs/9.x/collections#method-sortby"
+	},
+
+	"sortDesc collection": {
+		"prefix": "-sortDesc()",
+		"body": [
+			"${1:->}sortDesc()$0",
+		],
+		"description": "https://laravel.com/docs/9.x/collections#method-sortdesc"
+	},
+
+	"sortKeys collection": {
+		"prefix": "-sortKeys()",
+		"body": [
+			"${1:->}sortKeys(${2:'value'})$0",
+		],
+		"description": "https://laravel.com/docs/9.x/collections#method-sortkeys"
+	},
+
+	"sortKeysUsing collection": {
+		"prefix": "-sortKeysUsing()",
+		"body": [
+			"${1:->}sortKeysUsing(${2:'value'})$0",
+		],
+		"description": "https://laravel.com/docs/9.x/collections#method-sortkeysusing"
+	},
+
+	"splice collection": {
+		"prefix": "-splice()",
+		"body": [
+			"${1:->}splice(${2:'value'})$0",
+		],
+		"description": "https://laravel.com/docs/9.x/collections#method-splice"
+	},
+
+	"split collection": {
+		"prefix": "-split()",
+		"body": [
+			"${1:->}split(${2:'value'})$0",
+		],
+		"description": "https://laravel.com/docs/9.x/collections#method-split"
+	},
+
+	"splitIn collection": {
+		"prefix": "-splitIn()",
+		"body": [
+			"${1:->}splitIn(${2:'value'})$0",
+		],
+		"description": "https://laravel.com/docs/9.x/collections#method-splitin"
+	},
+
+	"sum collection": {
+		"prefix": "-sum()",
+		"body": [
+			"${1:->}sum(${2:'value'})$0",
+		],
+		"description": "https://laravel.com/docs/9.x/collections#method-sum"
+	},
+
+	"take collection": {
+		"prefix": "-take()",
+		"body": [
+			"${1:->}take(${2:'value'})$0",
+		],
+		"description": "https://laravel.com/docs/9.x/collections#method-take"
+	},
+
+	"takeUntil collection": {
+		"prefix": "-takeUntil()",
+		"body": [
+			"${1:->}takeUntil(${2:'value'})$0",
+		],
+		"description": "https://laravel.com/docs/9.x/collections#method-takeuntil"
+	},
+
+	"takeWhile collection": {
+		"prefix": "-takeWhile()",
+		"body": [
+			"${1:->}takeWhile(${2:'value'})$0",
+		],
+		"description": "https://laravel.com/docs/9.x/collections#method-takewhile"
+	},
+
+	"tap collection": {
+		"prefix": "-tap()",
+		"body": [
+			"${1:->}tap(${2:'value'})$0",
+		],
+		"description": "https://laravel.com/docs/9.x/collections#method-tap"
+	},
+
+	"times collection": {
+		"prefix": "-times()",
+		"body": [
+			"${1:->}times(${2:'value'})$0",
+		],
+		"description": "https://laravel.com/docs/9.x/collections#method-times"
+	},
+
+	"toArray collection": {
+		"prefix": "-toArray()",
+		"body": [
+			"${1:->}toArray()${2:;}$0",
+		],
+		"description": "https://laravel.com/docs/9.x/collections#method-toarray"
+	},
+
+	"toJson collection": {
+		"prefix": "-toJson()",
+		"body": [
+			"${1:->}toJson(${2:'value'})$0",
+		],
+		"description": "https://laravel.com/docs/9.x/collections#method-tojson"
+	},
+
+	"union collection": {
+		"prefix": "-union()",
+		"body": [
+			"${1:->}union(${2:[${3:'${4:key1}'} => ${5:['${6:value1}']}, ${7:'${8:key2}'} => ${9:['${10:value2}']}]})$0",
+		],
+		"description": "https://laravel.com/docs/9.x/collections#method-union"
+	},
+
+	"unique collection": {
+		"prefix": "-unique()",
+		"body": [
+			"${1:->}unique(${2:'value'})$0",
+		],
+		"description": "https://laravel.com/docs/9.x/collections#method-unique"
+	},
+
+	"unwrap collection": {
+		"prefix": "-unwrap()",
+		"body": [
+			"${1:->}unwrap(${2:'value'})$0",
+		],
+		"description": "https://laravel.com/docs/9.x/collections#method-unwrap"
+	},
+
+	"value collection": {
+		"prefix": "-value()",
+		"body": [
+			"${1:->}value(${2:'value'})$0",
+		],
+		"description": "https://laravel.com/docs/9.x/collections#method-value"
+	},
+
+	"values collection": {
+		"prefix": "-values()",
+		"body": [
+			"${1:->}values()$0",
+		],
+		"description": "https://laravel.com/docs/9.x/collections#method-values"
+	},
+
+	"when collection": {
+		"prefix": "-when()",
+		"body": [
+				"${1:->}where('${2:column}'${3:,'${4:operator}', ${5:'${6:value...}'}})$0",
+		],
+		"description": "https://laravel.com/docs/9.x/collections#method-when"
+	},
+
+	"whenEmpty collection": {
+		"prefix": "-whenEmpty()",
+		"body": [
+			"${1:->}whenEmpty(${2:fn($${3:query}) => $${3:query}->${4:push(${5:'${6:value}'})}})$0",
+		],
+		"description": "https://laravel.com/docs/9.x/collections#method-whenempty"
+	},
+
+	"whenNotEmpty collection": {
+		"prefix": "-whenNotEmpty()",
+		"body": [
+				"${1:->}whenNotEmpty(${2:fn($${3:query}) => $${3:query}->${4:push(${5:'${6:value}'})}})$0",
+		],
+		"description": "https://laravel.com/docs/9.x/collections#method-whennotempty"
+	},
+
+	"where collection": {
+		"prefix": "-where()",
+		"body": [
+				"${1:->}where('${2:column}'${3:,'${4:operator}', ${5:'${6:value...}'}})$0",
 		],
 		"description": "https://laravel.com/docs/9.x/queries#select-statements"
+	},
+
+	"whereX collection": {
+		"prefix": "-whereX()",
+		"body": [
+				"${1:->}where${2:Column}(${3:'${4:value...}'})$0",
+		],
+		"description": "https://laravel.com/docs/9.x/queries#select-statements"
+	},
+
+	"whereIn collection": {
+		"prefix": "-whereIn()",
+		"body": [
+			"${1:->}whereIn('${2:column}',[${3:${4:'${5:value1}'}, ${6:'${7:value2}'}}])$0",
+		],
+		"description": "https://laravel.com/docs/9.x/collections#method-wherein"
+	},
+
+	"whereBetween collection": {
+		"prefix": "-whereBetween()",
+		"body": [
+			"${1:->}whereBetween('${2:column}',[${3:${4:'${5:value1}'}, ${6:'${7:value2}'}}])$0",
+		],
+		"description": "https://laravel.com/docs/9.x/collections#method-wherebetween"
+	},
+
+	"whereNotBetween collection": {
+		"prefix": "-whereNotBetween()",
+		"body": [
+			"${1:->}whereNotBetween('${2:column}',[${3:${4:'${5:value1}'}, ${6:'${7:value2}'}}])$0",
+		],
+		"description": "https://laravel.com/docs/9.x/collections#method-wherebetween"
+	},
+
+	"whereNotIn collection": {
+		"prefix": "-whereNotIn()",
+		"body": [
+			"${1:->}whereNotIn('${2:column}',[${3:${4:'${5:value1}'}, ${6:'${7:value2}'}}])$0",
+		],
+		"description": "https://laravel.com/docs/9.x/collections#method-wherenotin"
+	},
+
+	"whereNotNull collection": {
+		"prefix": "-whereNotNull()",
+		"body": [
+			"${1:->}whereNotNull('${2:column}')$0",
+		],
+		"description": "https://laravel.com/docs/9.x/collections#method-wherenotnull"
+	},
+
+	"whereNull collection": {
+		"prefix": "-whereNull()",
+		"body": [
+			"${1:->}whereNull('${2:column}')$0",
+		],
+		"description": "https://laravel.com/docs/9.x/collections#method-wherenull"
+	},
+
+	"wrap collection": {
+		"prefix": "-wrap()",
+		"body": [
+			"${1:->}whereNull('${2:column}')$0",
+		],
+		"description": "https://laravel.com/docs/9.x/collections#method-wrap"
+	},
+
+	"zip collection": {
+		"prefix": "-zip()",
+		"body": [
+			"${1:->}zip('${2:column}')$0",
+		],
+		"description": "https://laravel.com/docs/9.x/collections#method-zip"
 	},
 }
