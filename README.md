@@ -1,17 +1,20 @@
-# Laravel Query Template
+# Laravel Query Template Snippets
 
-improve your project with laravel query template.
-
+improve your project.
 * Laravel 9x.
 * Laravel 8x.
 
 ## Example
--select
+-select()
 ```
     ->select('column1','column1')
 ```
+-whereX()
+```
+    ->whereColumn('value...')
+```
 
--with:multiple
+-with():multiple
 ```
     ->with(['table1:id','table2:id'])
 ```
@@ -21,47 +24,57 @@ improve your project with laravel query template.
     ->firstWhere('column', 'operator', 'value');
 ```
 
+## Features
+
+>**Collection Template Snippets**
+
+| Collection                    |Collection                   |Collection           |
+| ----------------------------  |----------------------------  |-------------------------- |
+| `-all()`                      |`-keys()`                      |`-sortBy()`                |
+| `-avg()`                      |`-last()`                      |`-sortDesc()`              |
+| `-chunk()`                    |`-lazy()`                      |`-sortKeys()`              |
+| `-collapse()`                 |`-map()`                       |`-splitIn()`               |
+| `-collect()`                  |`-max()`                       |`-sum()`                   |
+| `-combine()`                  |`-merge()`                     |`-take()`                  |
+| `-concat()`                   |`-min()`                       |`-takeUntil()`             |
+| `-contains()`                 |`-only()`                      |`-takeWhile()`             |
+| `-count()`                    |`-pluck()`                     |`-tap()`                   |
+| `-countBy()`                  |`-pop()`                       |`-times()`                 |
+| `-crossJoin()`                |`-prepend()`                   |`-toArray()`               |
+| `-diff()`                     |`-pull()`                      |`-toJson()`                |
+| `-diffAssoc()`                |`-push()`                      |`-union()`                 |
+| `-diffKeys()`                 |`-put()`                       |`-unique()`                |
+| `-doesntContain()`            |`-replace()`                   |`-unwrap()`                |
+| `-duplicates()`               |`-replaceRecursive()`          |`-value()`                 |
+| `-every()`                    |`-reverse()`                   |`-values()`                |
+| `-except()`                   |`-search()`                    |`-when()`                  |
+| `-filter()`                   |`-shift()`                     |`-whenEmpty()`             |
+| `-first()`                    |`-shuffle()`                   |`-whenNotEmpty()`          |
+| `-firstOrFail()`              |`-skip()`                      |`-where()`                 |
+| `-firstWhere()`               |`-skipUntil()`                 |`-where():operator         |
+| `-flatMap()`                  |`-skipWhile()`                 |`-whereX()`                |
+| `-flatten()`                  |`-slice()`                     |`-whereIn()`               |
+| `-flip()`                     |`-sliding()`                   |`-whereBetween()`          |
+| `-forget()`                   |`-sole()`                      |`-whereNotBetween()`       |
+| `-forPage()`                  |`-sort()`                      |`-whereNotIn()`            |
+| `-get()`                      |`-sortKeysUsing()`             |`-whereNotNull()`          |
+| `-groupBy()`                  |`-splice()`                    |`-whereNull()`             |
+|                               |`-wrap()`                      |`-orWhere()`               |
+|                               |`-zip()`                       |`-orWhere():operator`      |
+
+
+>**Query Template Snippets**
+
+- xauth:user
+
+```
+    auth()->user()->id
+```
+
 -xcreate:template
 ```
     model::create([
         ''		=> value,
-    ]);
-```
-
--xcreateMany:template
-```
-    $table->relation()->createMany([
-        ''		=> value,
-        ''		=> value
-    ]);
-```
--xsaveMany:template
-```
-    $table->relation()->saveMany([
-        new Model1(['column1' => 'value']),
-        new Model2(['column1' => 'value'])
-    ]);
-```
-
-xauth:user
-```
-    auth()->user()->id
-```
-xredirect:route
-```
-    return redirect()->route('')->with('messages',__('lang.success'));
-```
-xredirect:route
-```
-    return view('pages....', [
-	    ''		=> ,
-    ]);
-```
-
-xredirect:route
-```
-    model::create([
-	    ''		=> data,
     ]);
 ```
 
@@ -72,109 +85,98 @@ xvalidation:template
     ]);
 ```
 
+- xview:return
 
-xroute:multiple
+```
+    return view('pages....', [
+        ''		=> ,
+    ]);
+```
+
+-xcreateMany:template
+```
+    $table->relation()->createMany([
+        ''		=> value,
+        ''		=> value
+    ]);
+```
+
+- xredirect:route
+
+```
+    return redirect()->back()->with('messages',__('flash.insert'));
+```
+
+- xif:ternary
+```
+    ($condition) ? $statment1 : $statment2
+```
+
+- xgets:var
+```
+   $variable = 'query or data';
+```
+
+- xarray:3
+```
+    ''		=> ,
+    ''		=> ,
+    ''		=> ,
+```
+
+
+| query template               | query   template             | query template                 |
+| ------------------------------| ------------------------------|  ------------------------------| 
+| `xauth:user`                  |  `xarray:1`                    |  `xinsertGetId:template`       | 
+| `xredirect:route`             |  `xarray:2`                    |  `xcreate:template`            | 
+| `xredirect:back`              |  `xarray:3`                    |  `xupdate:template`            | 
+| `xview:return`                |  `xgets:var`                   |  `xvalidation:template`        | 
+| `xfunc:arrow`                 |  `xpublic:var`                 |   xcreateMany:template         | 
+| `xarrtobj:template`           | `xif:ternary`                  |    xsave:template              | 
+|                               | `xcreateInRelation:template`   | `xsaveMany:template`           |
+
+#
+>**Blade Template Snippets**
+
+- xroute:multiple
 ```
     {{ route('route.name',[$variable1, $variable2, $variable3]) }}
 ```
 
-xlang:local
+- xlang:local
 ```
     {{ __('') }}
 ```
 
-xslot:anonymous
+- xslot:anonymous
 ```
     <x-slot:>{{$variable}}</x-slot:>
 ```
 
-xslot:attribute
+- xslot:attribute
 ```
     <x-slot:heading class="">
 	    heading
     </x-slot:heading>
 ```
 
-## Features
-Eloquent Template Snippets :
-| Snippet                       |
-| ----------------------------  |
-| `-select()`                   |
-| `-all()`                      |
-| `-average()`                  |
-| `-chunk()`                    |
-| `-collapse()`                 |
-| `-collect()`                  |
-| `-combine()`                  |
-| `-concat()`                   |
-| `-contains()`                 |
-| `-count()`                    |
-| `-countBy()`                  |
-| `-crossJoin()`                |
-| `-diff()`                     |
-| `-diffAssoc()`                |
-| `-diffKeys()`                 |
-| `-doesntContain()`            |
-| `-duplicates()`               |
-| `-every()`                    |
-| `-except()`                   |
-| `-filter()`                   |
-| `-first()`                    |
-| `-firstOrFail()`              |
-| `-firstWhere()`               |
-| `-flatMap()`                  |
-| `-flatten()`                  |
-| `-flip()`                     |
-| `-forget()`                   |
-| `-forPage()`                  |
-| `-get()`                      |
-| `-groupBy()`                  |
-| `-with:single`                |
-| `-with:multiple`              |
-| `-withCount`                  |
-| `-whereRelation`              |
-| `-whereDoesntHave`            |
+- xlink:css
+```
+    <link href="{{ asset('style/...') }}" rel="stylesheet">
+```
 
-Query Template Snippets :
-| Snippet                       |
-| ------------------------------| 
-| `xauth:user`                  | 
-| `xredirect:route`             | 
-| `xredirect:back`              | 
-| `xview:return`                | 
-| `xfunc:anonymous`             | 
-| `xarray:1`                    | 
-| `xarray:2`                    | 
-| `xarray:3`                    | 
-| `xgets:var`                   | 
-| `xpublic:var`                 | 
-| `xif:ternary`                 | 
-| `xarrtobj:template`           | 
-| `xinsertGetId:template`       | 
-| `xinsertGetId:template`       | 
-| `xcreate:template`            | 
-| `xupdate:template`            | 
-| `xvalidation:template`        | 
+- xlink:js
+```
+    <script src="{{ asset('style/...') }}">
+```
 
-
-Blade Template Snippets | Custom:
-| Snippet                      |
-| ---------------------------- |
-| `xroute:single`              |
-| `xroute:multiple`            |
-| `xroute:non-attribute`       |
-| `xlang:local`                |
-| `xslot:anonymous`            |
-| `xslot:attribute`            |
-| `xlink:css`                  |
-| `xlink:js`                   |
-| `xbutton-toggle`             |
-| `xvariant:class`             |
-| `xmodal:template`            |
-| `xcol:template`              |
-| `xrow:template`              |
-| `xcard:template`             |
-| `xcontent:template`        |
+| blade template               | blade template               | blade template               |
+| ---------------------------- | ---------------------------- | ---------------------------- |
+| `xroute:single`              | `xslot:attribute`            | `xmodal:template`            |
+| `xroute:multiple`            | `xlink:css`                  | `xcol:template`              |
+| `xroute:non-attribute`       | `xlink:js`                   | `xrow:template`              |
+| `xlang:local`                | `xbutton-toggle`             | `xcard:template`             |
+| `xslot:anonymous`            | `xvariant:class`             | `xcontent:template`          |
 
 ## Authors
 

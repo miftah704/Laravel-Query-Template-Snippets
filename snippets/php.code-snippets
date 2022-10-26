@@ -4,7 +4,7 @@
 		"body": [
 			"auth()->user()${1:->id}"
 		],
-		"description": "auth with user function and id is optional @miftah)"
+		"description": "auth with user function and id is optional)"
 	},
 
 	"array to object": {
@@ -14,7 +14,7 @@
 				"\t'$1'\t\t=> $2,$0",
 			"];"
 		],
-		"description": "array to object @miftah"
+		"description": "array to object"
 	},
 
 	"array 1-data": {
@@ -22,7 +22,7 @@
 		"body": [
 			"'$1'${2:\t\t}=> $3,$0",
 		],
-		"description": "1 array data format template @miftah"
+		"description": "1 array data format template"
 	},
 
 	"array 2-data": {
@@ -31,7 +31,7 @@
 			"'$1'${2:\t\t}=> $3,",
 			"'$4'${5:\t\t}=> $6,$0",
 		],
-		"description": "2 array data format template @miftah"
+		"description": "2 array data format template"
 	},
 
 	"array 3-data": {
@@ -41,7 +41,7 @@
 			"'$4'${5:\t\t}=> $6,",
 			"'$7'${8:\t\t}=> $9,$0",
 		],
-		"description": "3 array data format template @miftah"
+		"description": "3 array data format template"
 	},
 
 	"get data with var": {
@@ -49,7 +49,7 @@
 		"body": [
 				"$${1:$variable} = ${2:'query or data'};",
 		],
-		"description": "get data with variable @miftah"
+		"description": "get data with variable"
 	},
 
 	"public var": {
@@ -57,7 +57,7 @@
 		"body": [
 				"public $${1:$variable};",
 		],
-		"description": "initialization for public variable @miftah"
+		"description": "initialization for public variable"
 	},
 
 	"redirect route": {
@@ -65,7 +65,7 @@
 		"body": [
 				"return redirect()->route('$1')${2:->with('${3:messages}',${4:${5:__('Flashdata.insert')}})};",
 		],
-		"description": "return redirect route with input template @miftah"
+		"description": "return redirect route with input template"
 	},
 
 	"redirect back": {
@@ -73,9 +73,8 @@
 		"body": [
 				"return ${1:redirect()->}back()${2:->with('${3:messages}',${4:${5:__('Flashdata.insert')}})};",
 		],
-		"description": "return redirect back with input template @miftah"
+		"description": "return redirect back with input template"
 	},
-
 
 	"return view": {
 		"prefix": "xview:return",
@@ -84,15 +83,15 @@
 				"\t'$2'\t\t=> $3,$0",
 			"]);"
 		],
-		"description": "return view template @miftah"
+		"description": "return view template"
 	},
 
-	"anonymous func": {
-		"prefix": "xfunc:anonymous",
+	"arrow func": {
+		"prefix": "xfunc:arrow",
 		"body": [
 				"=> fn ($${1:$query}) => $${1:$query}->${0:...}",
 		],
-		"description": "anonymous function @miftah"
+		"description": "anonymous function"
 	},
 
 	"ternary operator": {
@@ -100,7 +99,7 @@
 		"body": [
 				"($${1:condition}) ? $${2:statment1} : ${3:$${4:statment2}}",
 		],
-		"description": "ternary operator for condition @miftah"
+		"description": "ternary operator for condition"
 	},
 
 	"encrypt data": {
@@ -108,7 +107,7 @@
 		"body": [
 				"encryptVariable($${1:data})$0",
 		],
-		"description": "encryption data template @miftah"
+		"description": "encryption data template"
 	},
 
 	"decrypt data": {
@@ -116,6 +115,6 @@
 		"body": [
 				"decryptVariable($${1:data})$0",
 		],
-		"description": "decryption data template @miftah"
+		"description": "decryption data template"
 	},
 }

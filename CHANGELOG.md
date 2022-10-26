@@ -1,4 +1,7 @@
 # Change Log
+## 1.0.4
+* add collection
+* fix bug
 ## 1.0.3
 * add collection
 ## 1.0.2

@@ -1,5 +1,5 @@
 {
-	"page-template": {
+	"page template": {
 		"prefix": "xcontent:template",
 		"body": [
 			"<x-app-layout title=\"$1\">",
@@ -18,7 +18,7 @@
 		"description": ""
 	},
 
-	"card-template": {
+	"card template": {
 		"prefix": "xcard:template",
 		"body": [
 			"<x-cards.cards ${1:variant=\"${2:overflow-hidden}\"}>",
@@ -27,64 +27,64 @@
 			"\t<x-cards.card-footer>$5</x-cards.card-footer>",
 			"</x-cards.cards>",
 		],
-		"description": "HTML format. This template for MySunplan only @miftah"
+		"description": "HTML format. This template for MySunplan only"
 	},
 
-	"row-template": {
+	"row template": {
 		"prefix": "xrow:template",
 		"body": [
 			"<x-utilities.row-column ${1:variant=\"$2\"}>",
 			"\t${0:$content}",
 			"</x-utilities.row-column>",
 		],
-		"description": "HTML format. This template for MySunplan only @miftah"
+		"description": "HTML format. This template for MySunplan only"
 	},
 
-	"col-template": {
+	"col template": {
 		"prefix": "xcol:template",
 		"body": [
 			"<x-utilities.column ${1:variant=\"$2\"}>",
 			"\t${0:$content}",
 			"</x-utilities.column>",
 		],
-		"description": "HTML format. This template for MySunplan only @miftah"
+		"description": "HTML format. This template for MySunplan only"
 	},
 
-	"modal-template": {
+	"modal template": {
 		"prefix": "xmodal:template",
 		"body": [
 			"<x-modals.modal modalId=\"${1:...}\" modalTitle=\"${2:...}\" modalSize=\"${3:md}\" :center=\"${4:true}\">",
 			"\t${0:$content}",
 			"</x-modals.modal>",
 		],
-		"description": "HTML format. This template for MySunplan only @miftah"
+		"description": "HTML format. This template for MySunplan only"
 	},
 
 	// global blade
-	"class-name": {
+	"class name": {
 		"prefix": "xvariant:class",
 		"body": [
 			"variant=\"${1:col-lg-12}\"",
 		],
-		"description": "HTML format (variant class name blade @miftah)"
+		"description": "HTML format (variant class name blade)"
 	},
 
-	"slot-anonymous": {
+	"slot anonymous": {
 		"prefix": "xslot:anonymous",
 		"body": [
-			"<x-slot:$1>${2:{{${3:$$variable}}}}</x-slot:$1>$0",
+			"<x-slot:$1>${2:${3:$value}}</x-slot:$1>$0",
 		],
-		"description": "HTML format. You may define the content of the named slot using the x-slot tag. Any content not within an explicit x-slot tag will be passed to the component in the $slot variable. | https://laravel.com/docs/9.x/blade#slots. (Anonymous slot blade @miftah)"
+		"description": "HTML format. You may define the content of the named slot using the x-slot tag. Any content not within an explicit x-slot tag will be passed to the component in the $slot variable. | https://laravel.com/docs/9.x/blade#slots. (Anonymous slot blade)"
 	},
 
-	"slot-attr": {
+	"slot attr": {
 		"prefix": "xslot:attribute",
 		"body": [
 			"<x-slot:${1:heading} ${2:class=\"${3:}\"}>",
 			"\t${4:$heading}",
 			"</x-slot:${1:heading}>$0",
 		],
-		"description": "HTML format. Like Blade components, you may assign additional attributes to slots such as CSS class names. | https://laravel.com/docs/9.x/blade#slot-attributes (Attributes slot blade with attribute @miftah)"
+		"description": "HTML format. Like Blade components, you may assign additional attributes to slots such as CSS class names. | https://laravel.com/docs/9.x/blade#slot-attributes (Attributes slot blade with attribute)"
 	},
 
 	"Asset CSS": {
@@ -92,7 +92,7 @@
 		"body": [
 			"<link href=\"{{ asset('${1:style/${2:...}}') }}\" rel=\"stylesheet\">$0"
 		],
-		"description": "HTML Format (Asset CSS blade @miftah)"
+		"description": "HTML Format (Asset CSS blade)"
 	},
 
 	"Asset JS": {
@@ -100,7 +100,7 @@
 		"body": [
 			"<script src=\"{{ asset('${1:style/${2:...}}') }}\">$0"
 		],
-		"description": "HTML Format (Asset JS blade @miftah)."
+		"description": "HTML Blade Format (Asset JS blade)."
 	},
 
 
@@ -111,39 +111,39 @@
 			"\t${0:title or icons}",
 			"</button>"
 		],
-		"description": "HTML Blade format (button toggle for modal blade @miftah)"
+		"description": "HTML Blade format (button toggle for modal blade)"
 	},
 
 	// ========================================PHP
-	"single attribute": {
+	"single att": {
 		"prefix": "xroute:single",
 		"body": [
 			"{{ route('${1:route.name}',$${2:$variable})$0 }}"
 		],
-		"description": "PHP Blade Format (Route single-attribute blade @miftah)."
+		"description": "PHP Blade Format (Route single-attribute blade)."
 	},
 
-	"multiple attribute": {
+	"multiple att": {
 		"prefix": "xroute:multiple",
 		"body": [
-			"{{ route('${1:route.name}',[$${2:$variable1}, $${3:${4:$variable2}, $${5:$variable3}}])$6 }}"
+			"{{ route('${1:route.name}',[$${2:variable1}, ${3:$${4:variable2}, $${5:variable3}}])$6 }}"
 		],
-		"description": "PHP Blade Format (Route multiple-attribute blade @miftah)."
+		"description": "PHP Blade Format (Route multiple-attribute blade)."
 	},
 
-	"non-attr": {
+	"non attr": {
 		"prefix": "xroute:non-attribute",
 		"body": [
 			"{{ route('${1:route.name}')$0 }}"
 		],
-		"description": "PHP Blade format (Route non-attribute blade @miftah)"
+		"description": "PHP Blade format (Route non-attribute blade)"
 	},
 
-	"loc-languages": {
+	"local languages": {
 		"prefix": "xlang:local",
 		"body": [
 			"{{ __('$1') }}"
 		],
-		"description": "PHP Blade format (local languages @miftah)"
+		"description": "PHP Blade format (local languages)"
 	},
 }

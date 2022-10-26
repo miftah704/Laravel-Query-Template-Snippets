@@ -1,0 +1,11 @@
+{
+
+	// "singe-where queries": {
+	// 	"prefix": "-where:single",
+	// 	"body": [
+	// 			"${1:->}where('${2:column1}'${3:,'${4:column...}'})",
+	// 	],
+	// 	"description": "https://laravel.com/docs/9.x/queries#select-statements"
+	// },
+
+}

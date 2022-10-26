@@ -1,14 +1,14 @@
 {
 	"single-with eloquent": {
-		"prefix": "-with:single",
+		"prefix": "-with():single",
 		"body": [
-				"->with${1:X}(${2:'${3:${4:relation}${5::${6:id}}}'})$0",
+				"->with(${1:'${2:${3:relation}${4::${5:id}}}'})$0",
 		],
 		"description": "https://laravel.com/docs/9.x/eloquent-relationships#eager-loading"
 	},
 
 	"multiple-with eloquent": {
-		"prefix": "-with:multiple",
+		"prefix": "-with():multiple",
 		"body": [
 				"->with(['${2:${3:${4:relation1}${5::${6:id}}}}','${7:${8:${9:relation2}${10::${11:id}}}}'$12])$0",
 		],
@@ -16,7 +16,7 @@
 	},
 
 	"withWhereHas eloquent": {
-		"prefix": "-with:whereHas",
+		"prefix": "-withWhereHas()",
 		"body": [
 			"->withWhereHas('${1:relation}'${2:, fn ($${3:query}) => $${3:query}->${4:...}})",
 		],
@@ -24,15 +24,15 @@
 	},
 
 	"withCount eloquent": {
-		"prefix": "-withCount",
+		"prefix": "-withCount()",
 		"body": [
-				"->withCount('${1:relation}')$0",
+				"->withCount('${1:relation} ${2:AS ${3:alias}}')$0",
 		],
 		"description": "https://laravel.com/docs/9.x/eloquent-relationships#counting-related-models"
 	},
 
 	"withCount func eloquent": {
-		"prefix": "-withCount:function",
+		"prefix": "-withCount():function",
 		"body": [
 				"->withCount(${1:['${3:relation} ${4:AS ${5:alias}}'${2:=> fn ($$q) => $$q->${6:...}}]})$0",
 		],
@@ -40,9 +40,9 @@
 	},
 
 	"withSum eloquent": {
-		"prefix": "-withSum",
+		"prefix": "-withSum()",
 		"body": [
-				"->withSum('${1:relation}','${2:column}')$0",
+				"->withSum('${1:relation}', '${2:column}')$0",
 		],
 		"description": "https://laravel.com/docs/9.x/eloquent-relationships#other-aggregate-functions"
 	},
@@ -50,13 +50,29 @@
 	"withSum func eloquent": {
 		"prefix": "-withSum:function",
 		"body": [
-				"->withSum(['${1:${3:relation} ${4:AS ${5:alias}}}'=> fn ($${6:query}) => $${6:query}->${7:...}], '${8:column}')$0",
+				"->withSum(['${1:${3:relation} ${4:AS ${5:alias}}}' => fn ($${6:query}) => $${6:query}->${7:...}], '${8:column}')$0",
 		],
 		"description": "https://laravel.com/docs/9.x/eloquent-relationships#other-aggregate-functions"
 	},
 
+	"without eloquent": {
+		"prefix": "-without()",
+		"body": [
+				"->without('${1:relation}')$0",
+		],
+		"description": "https://laravel.com/docs/9.x/eloquent-relationships#eager-loading-by-default"
+	},
+
+	"withOnly eloquent": {
+		"prefix": "-withOnly()",
+		"body": [
+				"->withOnly('${1:relation}')$0",
+		],
+		"description": "https://laravel.com/docs/9.x/eloquent-relationships#eager-loading-by-default"
+	},
+
 	"has eloquent": {
-		"prefix": "-has",
+		"prefix": "-has()",
 		"body": [
 			"->has('${1:relation}')$0",
 		],
@@ -64,7 +80,7 @@
 	},
 
 	"doesntHave eloquent": {
-		"prefix": "-doesntHave",
+		"prefix": "-doesntHave()",
 		"body": [
 			"->doesntHave('${1:relation}')$0",
 		],
@@ -72,33 +88,113 @@
 	},
 
 	"whereHas eloquent": {
-		"prefix": "-whereHas",
+		"prefix": "-whereHas()",
 		"body": [
-			"->whereHas('${1:relation}' => fn($${2:query}) => $${2:query}->${3:...})$0",
+			"->whereHas('${1:relation}'${2:, fn ($${3:query}) => $${3:query}->${4:...}})",
 		],
 		"description": "https://laravel.com/docs/9.x/eloquent-relationships#querying-relationship-existence"
 	},
 
 	"whereRelation eloquent": {
-		"prefix": "-whereRelation",
+		"prefix": "-whereRelation()",
 		"body": [
 			"->whereRelation('${1:relation}', '${2:column}', ${3:'${4:operator}', ${6:'${7:value}'}})$0",
 		],
 		"description": "https://laravel.com/docs/9.x/eloquent-relationships#inline-relationship-existence-queries"
 	},
 
-	"whereDoesntHave eloquent": {
-		"prefix": "-whereDoesntHave",
+	"whereBelongsTo:default eloquent": {
+		"prefix": "-whereBelongsTo():default",
 		"body": [
-				"->whereDoesntHave('${1:relation}'${2:, fn ($${3:query}) => $${3:query}->${4:...}})",
+			"->whereBelongsTo($${1:value})$0",
+		],
+		"description": "https://laravel.com/docs/9.x/eloquent-relationships#querying-belongs-to-relationshipss"
+	},
+
+	"whereBelongsTo:manual eloquent": {
+		"prefix": "-whereBelongsTo():manual",
+		"body": [
+			"->whereBelongsTo($${1:value}, '${2:relation}')$0",
+		],
+		"description": "https://laravel.com/docs/9.x/eloquent-relationships#querying-belongs-to-relationshipss"
+	},
+
+	"whereDoesntHave eloquent": {
+		"prefix": "-whereDoesntHave()",
+		"body": [
+				"->whereDoesntHave('${1:relation}'${2:, fn ($${3:query}) => $${3:query}->${4:...}})$0",
 		],
 		"description": "https://laravel.com/docs/9.x/eloquent-relationships#querying-relationship-absence"
+	},
+
+	"wherePivot eloquent": {
+		"prefix": "-wherePivot()",
+		"body": [
+				"->wherePivot('${1:column}', ${2:value})$0",
+		],
+		"description": "https://laravel.com/docs/9.x/eloquent-relationships#filtering-queries-via-intermediate-table-columns"
+	},
+
+	"wherePivotIn eloquent": {
+		"prefix": "-wherePivotIn()",
+		"body": [
+				"->wherePivotIn('${1:column}', [${2:'${3:value}'}, ${4:'${5:value}'}])$0",
+		],
+		"description": "https://laravel.com/docs/9.x/eloquent-relationships#filtering-queries-via-intermediate-table-columns"
+	},
+
+	"wherePivotNotIn eloquent": {
+		"prefix": "-wherePivotNotIn()",
+		"body": [
+				"->wherePivotNotIn('${1:column}', [${2:'${3:value}'}, ${4:'${5:value}'}])$0",
+		],
+		"description": "https://laravel.com/docs/9.x/eloquent-relationships#filtering-queries-via-intermediate-table-columns"
+	},
+	
+	"wherePivotBetween eloquent": {
+		"prefix": "-wherePivotBetween()",
+		"body": [
+				"->wherePivotBetween('${1:column}', [${2:'${3:value}'}, ${4:'${5:value}'}])$0",
+		],
+		"description": "https://laravel.com/docs/9.x/eloquent-relationships#filtering-queries-via-intermediate-table-columns"
+	},
+
+	"wherePivotNotBetween eloquent": {
+		"prefix": "-wherePivotNotBetween()",
+		"body": [
+				"->wherePivotNotBetween('${1:column}', [${2:'${3:value}'}, ${4:'${5:value}'}])$0",
+		],
+		"description": "https://laravel.com/docs/9.x/eloquent-relationships#filtering-queries-via-intermediate-table-columns"
+	},
+
+	"wherePivotNull eloquent": {
+		"prefix": "-wherePivotNull()",
+		"body": [
+				"->wherePivotNull(${1:'${2:column}'})$0",
+		],
+		"description": "https://laravel.com/docs/9.x/eloquent-relationships#filtering-queries-via-intermediate-table-columns"
+	},
+
+	"wherePivotNotNull eloquent": {
+		"prefix": "-wherePivotNotNull()",
+		"body": [
+				"->wherePivotNotNull(${1:'${2:column}'})$0",
+		],
+		"description": "https://laravel.com/docs/9.x/eloquent-relationships#filtering-queries-via-intermediate-table-columns"
+	},
+
+	"orderByPivot eloquent": {
+		"prefix": "-orderByPivot()",
+		"body": [
+				"->orderByPivot('${1:column}', '${2:asc}')$0",
+		],
+		"description": "https://laravel.com/docs/9.x/eloquent-relationships#ordering-queries-via-intermediate-table-columns"
 	},
 
 	"select eloquent": {
 		"prefix": "-select()",
 		"body": [
-				"${1:->}select('${2:column1}'${3:,'${2:column...}'})",
+				"${1:->}select('${2:column1}'${3:,'${4:column...}'})$0",
 		],
 		"description": "https://laravel.com/docs/9.x/queries#select-statements"
 	},
@@ -178,7 +274,7 @@
 	"validation": {
 		"prefix": "xvalidation:template",
 		"body": [
-				"$$validated = $$request->validate([",
+				"$validated = $request->validate([",
 					"\t'$1'\t\t=> '${2:value}',$3",
 				"]);$0",
 		],

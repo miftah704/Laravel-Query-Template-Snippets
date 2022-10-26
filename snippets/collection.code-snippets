@@ -645,7 +645,15 @@
 	"where collection": {
 		"prefix": "-where()",
 		"body": [
-				"${1:->}where('${2:column}'${3:,'${4:operator}', ${5:'${6:value...}'}})$0",
+				"${1:->}where('${2:column}', ${3:'${4:value...}'})$0",
+		],
+		"description": "https://laravel.com/docs/9.x/queries#select-statements"
+	},
+
+	"whereOperator collection": {
+		"prefix": "-where():operator",
+		"body": [
+			"${1:->}where('${2:column}', ${3:${4:'${5:operator}',} ${6:'${7:value...}'}})$0",
 		],
 		"description": "https://laravel.com/docs/9.x/queries#select-statements"
 	},
@@ -705,6 +713,22 @@
 		],
 		"description": "https://laravel.com/docs/9.x/collections#method-wherenull"
 	},
+
+	"orWhere collection": {
+		"prefix": "-orWhere()",
+		"body": [
+			"${1:->}orWhere('${2:column}', ${3:'${4:value...}'})$0",
+		],
+		"description": "https://laravel.com/docs/9.x/queries#select-statements"
+	},
+	"orWhereOperator collection": {
+		"prefix": "-orWhere():operator",
+		"body": [
+				"${1:->}orWhere('${2:column}', ${3:${4:'${5:operator}',} ${6:'${7:value...}'}})$0",
+		],
+		"description": "https://laravel.com/docs/9.x/queries#select-statements"
+	},
+
 
 	"wrap collection": {
 		"prefix": "-wrap()",
