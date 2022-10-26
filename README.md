@@ -26,6 +26,7 @@ improve your project.
 
 ## Features
 
+#
 >**Collection Template Snippets**
 
 | Collection                    |Collection                   |Collection           |
@@ -63,6 +64,7 @@ improve your project.
 |                               |`-zip()`                       |`-orWhere():operator`      |
 
 
+#
 >**Query Template Snippets**
 
 - xauth:user
