@@ -131,8 +131,8 @@ xvalidation:template
 | `xredirect:route`             |  `xarray:2`                    |  `xcreate:template`            | 
 | `xredirect:back`              |  `xarray:3`                    |  `xupdate:template`            | 
 | `xview:return`                |  `xgets:var`                   |  `xvalidation:template`        | 
-| `xfunc:arrow`                 |  `xpublic:var`                 |   xcreateMany:template         | 
-| `xarrtobj:template`           | `xif:ternary`                  |    xsave:template              | 
+| `xfunc:arrow`                 |  `xpublic:var`                 |   `xcreateMany:template`         | 
+| `xarrtobj:template`           | `xif:ternary`                  |    `xsave:template`              | 
 |                               | `xcreateInRelation:template`   | `xsaveMany:template`           |
 
 #
